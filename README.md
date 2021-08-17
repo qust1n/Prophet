@@ -1,2 +1,32 @@
 # Prophet
-Telegram voice messages speech recognition
+Telegram userbot voice messages speech recognition. 
+Created with **Pyrogram** and **Google Speech Recognition**
+
+# Setup
+**Termux installation:`Commands`**
+```
+$ pkg update
+$ pkg upgrade
+$ pkg install python
+$ pkg install git
+$ pkg install ffmpeg
+$ git clone https://github.com/qust1n/Prophet.git
+$ cd Prophet
+$ pip install -r requirements.txt
+```
+
+**First run**
+```
+python confpars.py
+```
+*Input your **API_ID** and **API_HASH** and close the program: `CTRL + C`*
+```
+python prophet.py
+```
+*When you run for the first time. You must be logged into your account
+**Telegram***.
+
+*When you are logged in, close the program: `CTRL + C` and start again.*
+```
+$ python prophet.py
+```
