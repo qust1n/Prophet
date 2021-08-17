@@ -17,11 +17,11 @@ $ pip install -r requirements.txt
 
 **First run**
 ```
-python confpars.py
+$ python confpars.py
 ```
 *Input your **API_ID** and **API_HASH** and close the program: `CTRL + C`*
 ```
-python prophet.py
+$ python prophet.py
 ```
 *When you run for the first time. You must be logged into your account
 **Telegram***.
