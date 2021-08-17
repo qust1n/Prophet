@@ -1,7 +1,6 @@
 from pyrogram import Client, filters, errors
 from pydub import AudioSegment
 import speech_recognition as sr
-from colorama import Fore, Style
 from setlang import LangIndex
 from  art import *
 import os 
@@ -43,8 +42,6 @@ try:
 		except sr.RequestError as e:
 			print("Could not request results from Google Speech Recognition service; {0}".format(e))
 		
-	#print(Style.BRIGHT + Fore.CYAN + '[' + Fore.YELLOW + '☆' + Fore.GREEN 
-							#+ ' Created by QUSTIN ' + Fore.YELLOW + '☆' + Fore.CYAN + ']')				
 						
 	app.run()
 		
