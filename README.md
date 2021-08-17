@@ -30,3 +30,12 @@ $ python prophet.py
 ```
 $ python prophet.py
 ```
+
+# How get api_id and api_hash?
+
+• Log in to your Telegram core: 
+https://my.telegram.org
+
+• Go to **'API development tools'** and fill out the form.
+
+• You will get basic addresses as well as the **api_id** and **api_hash** parameters required for user authorization.
