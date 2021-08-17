@@ -1,6 +1,5 @@
 Pyrogram==1.2.9
 SpeechRecognition==3.8.1
-colorama==0.4.4
 pydub==0.25.1
 art==5.2
 configparser==5.0.2
