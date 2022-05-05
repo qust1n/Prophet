@@ -1,7 +1,7 @@
-Pyrogram==1.2.9
+Pyrogram==2.0.16
 SpeechRecognition==3.8.1
 pydub==0.25.1
-art==5.2
+art==5.3
 configparser==5.0.2
-TgCrypto==1.2.2
+TgCrypto==1.2.3
 audiosegment==0.23.0
