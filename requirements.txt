@@ -5,3 +5,5 @@ art==5.3
 configparser==5.0.2
 TgCrypto==1.2.3
 audiosegment==0.23.0
+tqdm==4.62.3
+asciimatics==1.14.0
