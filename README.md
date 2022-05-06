@@ -14,7 +14,7 @@ $ pkg install flac
 $ git clone https://github.com/qust1n/Prophet.git
 $ cd Prophet
 $ pip install -r requirements.txt
-``
+```
 
 **First run**
 ```
