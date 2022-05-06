@@ -13,23 +13,23 @@ $ pkg install ffmpeg
 $ pkg install flac
 $ git clone https://github.com/qust1n/Prophet.git
 $ cd Prophet
-$ pip install -r requirements.txt
+$ pip3 install -r requirements.txt
 ```
 
 **First run**
 ```
-$ python confpars.py
+$ python3 confpars.py
 ```
 *Input your **API_ID** and **API_HASH** and close the program: `CTRL + C`*
 ```
-$ python prophet.py
+$ python3 prophet.py
 ```
 *When you run for the first time. You must be logged into your account
 **Telegram***.
 
 *When you are logged in, close the program: `CTRL + C` and start again.*
 ```
-$ python prophet.py
+$ python3 prophet.py
 ```
 
 # How get api_id and api_hash?
