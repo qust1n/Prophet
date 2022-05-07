@@ -3,8 +3,7 @@ try:
 	api_hash = input("Enter api_hash: ")
 	
 	with open('config.py', 'w') as file:
-		file.write("api_id = " + str(api_id)+
-						 "\napi_hash = " + str(api_hash))
+		file.write("api_id = " + str(api_id)+"\napi_hash = " + str(api_hash))
 		
 		
 	print("\n\033[32mDone!")
