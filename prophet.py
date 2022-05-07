@@ -5,6 +5,7 @@ from setlang import LangIndex
 import os 
 import asyncio
 from tqdm import trange
+from config import api_id, api_hash
 from asciimatics.effects import Cycle, Stars
 from asciimatics.renderers import FigletText
 from asciimatics.scene import Scene
@@ -18,7 +19,7 @@ tprint("by QSST", "cybermedium")
 
 
 
-app = Client("my_account", lang_code="ru")
+app = Client("my_account", api_id=api_id, api_hash=api_hash, lang_code="ru")
 
 def update_screen(end_time, loop, screen):
     screen.draw_next_frame()
