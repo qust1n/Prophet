@@ -20,10 +20,8 @@ $ pip3 install -r requirements.txt
 ```
 $ python3 confpars.py
 ```
-*Input your **API_ID** and **API_HASH** and close the program: `CTRL + C`*
-```
-$ python3 prophet.py
-```
+*Input your **API_ID** and **API_HASH***
+
 *When you run for the first time. You must be logged into your account
 **Telegram***.
 
