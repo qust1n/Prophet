@@ -6,7 +6,7 @@ try:
 	data = input("Enter api_id: ")
 	
 	encodedBytes = base64.b64encode(data.encode("utf-8"))
-	encodedStr = str(encodedBytes, "utf-8")	
+	encodedStr = str(encodedBytes, "ascii")
 	
 	data2 = input("Enter api_hash: ")
 	
