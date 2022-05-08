@@ -27,10 +27,6 @@ $ python3 confpars.py
 *When you run for the first time. You must be logged into your account
 **Telegram***.
 
-*When you are logged in, close the program: `CTRL + C` and start again.*
-```
-$ python3 prophet.py
-```
 
 # How get api_id and api_hash?
 
