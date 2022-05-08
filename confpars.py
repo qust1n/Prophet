@@ -4,7 +4,7 @@ try:
 	
 	with open('config.py', 'w') as file:
 		file.write("api_id = " + str(api_id)+
-						 "\napi_hash = " + "'" +str(api_hash) + "'")
+		"\napi_hash = " + "'" +str(api_hash) + "'")
 		
 		
 	print("\n\033[32mDone!")
