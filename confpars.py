@@ -1,13 +1,21 @@
+import base64
+from rich.console import Console 
+console = Console()
+
 try:
-	api_id = int(input("Enter api_id: "))
-	api_hash = input("Enter api_hash: ")
+	data = input("Enter api_id: ")
+	
+	encodedBytes = base64.b64encode(data.encode("utf-8"))
+	encodedStr = str(encodedBytes, "utf-8")	
+	
+	data2 = input("Enter api_hash: ")
+	
+	encodedBytes2 = base64.b64encode(data2.encode("utf-8"))
+	encodedStr2 = str(encodedBytes2, "utf-8")
 	
 	with open('config.py', 'w') as file:
-		file.write("api_id = " + str(api_id)+
-						 "\napi_hash = " + "'" +str(api_hash) + "'")
-		
-		
-	print("\n\033[32mDone!")
-		
-except ValueError:
-	print("\n\033[31mapi_id consists of numbers only")
+		file.write("api_id = " + "'" + encodedStr + "'\n"
+		"api_hash = " + "'" + str(encodedBytes2, "utf-8") + "'")
+	
+except Exception:
+	console.print_exception(show_locals=True)

@@ -11,15 +11,30 @@ from asciimatics.screen import Screen
 from art import *
 from config import api_id, api_hash
 from rich.console import Console 
+import base64	
+
+decodedBytes = base64.b64decode(api_id)
+decodedStr = int(decodedBytes)
+	
+decodedBytes2 = base64.b64decode(api_hash)
+decodedStr2 = str(decodedBytes2, "utf-8")
+
 
 if os.path.exists("lang.py") == False:
+
 	with open('lang.py', 'w') as file:
 		file.write("LanIndex = " + "'en-US")
+
 else:
+
 	pass
+
 try:
+
 	from lang import LanIndex
+
 except:
+
 	with open('lang.py', 'w') as file:
 		file.write("LanIndex = " + "'en-US'")
 	from lang import LanIndex
@@ -35,8 +50,8 @@ print('\033[3mTo change the language, write \033[32m.l "number"\033[0m\033[3m fr
 console = Console()
 
 app = Client("my_account", 
-						api_id=api_id, 
-						api_hash=api_hash, 
+						api_id=decodedBytes, 
+						api_hash=decodedBytes2, 
 						lang_code="ru")
 
 def update_screen(end_time, loop, screen):
