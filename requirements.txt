@@ -6,3 +6,4 @@ TgCrypto==1.2.3
 audiosegment==0.23.0
 tqdm==4.62.3
 asciimatics==1.14.0
+rich==10.12.0
