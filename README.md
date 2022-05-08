@@ -2,6 +2,8 @@
 Telegram userbot voice messages speech recognition. 
 Created with **Pyrogram** and **Google Speech Recognition**
 
+Supports **137** languages!🎉
+
 # Setup
 **Termux installation:`Commands`**
 ```
