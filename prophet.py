@@ -1,7 +1,6 @@
 from pyrogram import Client, filters
 from pydub import AudioSegment
 import speech_recognition as sr
-#from setlang import LangIndex
 import os 
 import asyncio
 from tqdm import trange
