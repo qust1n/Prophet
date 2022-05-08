@@ -11,13 +11,6 @@ from asciimatics.screen import Screen
 from art import *
 from config import api_id, api_hash
 from rich.console import Console 
-import base64	
-
-decodedBytes = base64.b64decode(api_id)
-decodedStr = int(decodedBytes)
-	
-decodedBytes2 = base64.b64decode(api_hash)
-decodedStr2 = str(decodedBytes2, "utf-8")
 
 
 if os.path.exists("lang.py") == False:
@@ -45,14 +38,14 @@ tprint("PROPHET")
 tprint("by QSST", "cybermedium")
 
 print('\033[3mTo change the language, write \033[32m.l "number"\033[0m\033[3m from the list in any telegram chat.\n'+
-          "To view the list, write in any telegram chat \033[32m.list\033[0m\033[3m\n\nDefault: \033[32mEnglish (United Kingdom)\033[0m")
+"To view the list, write in any telegram chat \033[32m.list\033[0m\033[3m\n\nDefault: \033[32mEnglish (United Kingdom)\033[0m")
 
 console = Console()
 
 app = Client("my_account", 
-						api_id=decodedBytes, 
-						api_hash=decodedBytes2, 
-						lang_code="ru")
+			api_id=api_id, 
+			api_hash=api_hash, 
+			lang_code="ru")
 
 def update_screen(end_time, loop, screen):
     screen.draw_next_frame()
@@ -422,143 +415,143 @@ async def change_language(_, msg):
 async def languages_list(_, msg):
 	
 	await msg.edit("List of languages:\n\n"+
-							'1. Afrikaans (South Africa)\n'+
-							'2. Albanian (Albania)\n'+
-							'3. Amharic (Ethiopia)\n'+
-							'4. Arabic (Algeria)\n'+
-							'5. Arabic (Bahrain)\n'+
-							'6. Arabic (Egypt)\n'+
-							'7. Arabic (Iraq)\n'+
-							'8. Arabic (Israel)\n'+
-							'9. Arabic (Jordan)\n'+
-							"10. Arabic (Kuwait)\n"+
-							"11. Arabic (Lebanon)\n"+
-							"12. Arabic (Morocco)\n"+
-							"13. Arabic (Oman)\n"+
-							"14. Arabic (Qatar)\n"+
-							"15. Arabic (Saudi Arabia)\n"+
-							"16. Arabic (State of Palestine)\n"+
-							"17. Arabic (Tunisia)\n"+
-							"18. Arabic (United Arab Emirates)\n"+
-							"19. Arabic (Yemen)\n"+
-							"20. Armenian (Armenia)\n"+
-							"21. Azerbaijani (Azerbaijan)\n"+
-							"22. Basque (Spain)\n"+
-							"23. Bengali (Bangladesh)\n"+
-							"24. Bengali (India)\n"+
-							"25. Bosnian (Bosnia and Herzegovina)\n"+
-							"26. Bulgarian (Bulgaria)\n"+
-							"27. Burmese (Myanmar)\n"+
-							"28. Catalan (Spain)\n"+
-							"29. Chinese, Cantonese (Traditional Hong Kong)\n"+
-							"30. Chinese, Mandarin (Simplified, China)\n"+
-							"31. Chinese, Mandarin (Traditional, Taiwan)\n"+
-							"32. Croatian (Croatia)\n"+
-							"33. Czech (Czech Republic)\n"+
-							"34. Danish (Denmark)\n"+
-							"35. Dutch (Belgium)\n"+
-							"36. Dutch (Netherlands)\n"+
-							"37. English (Australia)\n"+
-							"38. English (Canada)\n"+
-							"39. English (Ghana)\n"+
-							"40. English (Hong Kong)\n"+
-							"41. English (India)\n"+
-							"42. English (Ireland)\n"+
-							"43. English (Kenya)\n"+
-							"44. English (New Zealand)\n"+
-							"45. English (Nigeria)\n"+
-							"46. English (Pakistan)\n"+
-							"47. English (Philippines)\n"+
-							"48. English (Singapore)\n"+
-							"49. English (South Africa)\n"+
-							"50. English (Tanzania)\n"+
-							"51. English (United Kingdom)\n"+
-							"52. English (United States)\n"+
-							"53. Estonian (Estonia)\n"+
-							"54. Filipino (Philippines)\n"+
-							"55. Finnish (Finland)\n"+
-							"56. French (Belgium)\n"+
-							"57. French (Canada)\n"+
-							"58. French (France)\n"+
-							"59. French (Switzerland)\n"+
-							"60. Galician (Spain)\n"+
-							"61. Georgian (Georgia)\n"+
-							"62. German (Austria)\n"+
-							"63. German (Germany)\n"+
-							"64. German (Switzerland)\n"+
-							"65. Greek (Greece)\n"+
-							"66. Gujarati (India)\n"+
-							"67. Hebrew (Israel)\n"+
-							"68. Hindi (India)\n"+
-							"69. Hungarian (Hungary)\n"+
-							"70. Icelandic (Iceland)\n"+
-							"71. Indonesian (Indonesia)\n"+
-							"72. Italian (Italy)\n"+
-							"73. Italian (Switzerland)\n"+
-							"74. Japanese (Japan)\n"+
-							"75. Javanese (Indonesia)\n"+
-							"76. Kannada (India)\n"+
-							"77. Kazakh (Kazakhstan)\n"+
-							"78. Khmer (Cambodia)\n"+
-							"79. Korean (South Korea)\n"+
-							"80. Lao (Laos)\n"+
-							"81. Latvian (Latvia)\n"+
-							"82. Lithuanian (Lithuania)\n"+
-							"83. Macedonian (North Macedonia)\n"+
-							"84. Malay (Malaysia)\n"+
-							"85. Malayalam (India)\n"+
-							"86. Marathi (India)\n"+
-							"87. Mongolian (Mongolia)\n"+
-							"88. Nepali (Nepal)\n"+
-							"89. Norwegian Bokmål (Norway)\n"+
-							"90. Persian (Iran)\n"+
-							"91. Polish (Poland)\n"+
-							"92. Portuguese (Brazil)\n"+
-							"93. Portuguese (Portugal)\n"+
-							"94. Punjabi (Gurmukhi India)\n"+
-							"95. Romanian (Romania)\n"+
-							"96. Russian (Russia)\n"+
-							"97. Serbian (Serbia)\n"+
-							"98. Sinhala (Sri Lanka)\n"+
-							"99. Slovak (Slovakia)\n"+
-							"100. Slovenian (Slovenia)\n"+
-							"101. Spanish (Argentina)\n"+
-							"102. Spanish (Bolivia)\n"+
-							"103. Spanish (Chile)\n"+
-							"104. Spanish (Colombia)\n"+
-							"105. Spanish (Costa Rica)\n"+
-							"106. Spanish (Dominican Republic)\n"+
-							"107. Spanish (Ecuador)\n"+
-							"108. Spanish (El Salvador)\n"+
-							"109. Spanish (Guatemala)\n"+
-							"110. Spanish (Honduras)\n"+
-							"111. Spanish (Mexico)\n"+
-							"112. Spanish (Nicaragua)\n"+
-							"113. Spanish (Panama)\n"+
-							"114. Spanish (Paraguay)\n"+
-							"115. Spanish (Peru)\n"+
-							"116. Spanish (Puerto Rico)\n"+
-							"117. Spanish (Spain)\n"+
-							"118. Spanish (United States)\n"+
-							"119. Spanish (Uruguay)\n"+
-							"120. Spanish (Venezuela)\n"+
-							"121. Sundanese (Indonesia)\n"+
-							"122. Swahili (Kenya)\n"+
-							"123. Swahili (Tanzania)\n"+
-							"124. Swedish (Sweden)\n"+
-							"125. Tamil (India)\n"+
-							"126. Tamil (Malaysia)\n"+
-							"127. Tamil (Singapore)\n"+
-							"128. Tamil (Sri Lanka)\n"+
-							"129. Telugu (India)\n"+
-							"130. Thai (Thailand)\n"+
-							"131. Turkish (Turkey)\n"+
-							"132. Ukrainian (Ukraine)\n"+
-							"133. Urdu (India)\n"+
-							"134. Urdu (Pakistan)\n"+
-							"135. Uzbek (Uzbekistan)\n"+
-							"136. Vietnamese (Vietnam)\n"+
-							"137. Zulu (South Africa)\n\n")
+				'1. Afrikaans (South Africa)\n'+
+				'2. Albanian (Albania)\n'+
+				'3. Amharic (Ethiopia)\n'+
+				'4. Arabic (Algeria)\n'+
+				'5. Arabic (Bahrain)\n'+
+				'6. Arabic (Egypt)\n'+
+				'7. Arabic (Iraq)\n'+
+				'8. Arabic (Israel)\n'+
+				'9. Arabic (Jordan)\n'+
+				"10. Arabic (Kuwait)\n"+
+				"11. Arabic (Lebanon)\n"+
+				"12. Arabic (Morocco)\n"+
+				"13. Arabic (Oman)\n"+
+				"14. Arabic (Qatar)\n"+
+				"15. Arabic (Saudi Arabia)\n"+
+				"16. Arabic (State of Palestine)\n"+
+				"17. Arabic (Tunisia)\n"+
+				"18. Arabic (United Arab Emirates)\n"+
+				"19. Arabic (Yemen)\n"+
+				"20. Armenian (Armenia)\n"+
+				"21. Azerbaijani (Azerbaijan)\n"+
+				"22. Basque (Spain)\n"+
+				"23. Bengali (Bangladesh)\n"+
+				"24. Bengali (India)\n"+
+				"25. Bosnian (Bosnia and Herzegovina)\n"+
+				"26. Bulgarian (Bulgaria)\n"+
+				"27. Burmese (Myanmar)\n"+
+				"28. Catalan (Spain)\n"+
+				"29. Chinese, Cantonese (Traditional Hong Kong)\n"+
+				"30. Chinese, Mandarin (Simplified, China)\n"+
+				"31. Chinese, Mandarin (Traditional, Taiwan)\n"+
+				"32. Croatian (Croatia)\n"+
+				"33. Czech (Czech Republic)\n"+
+				"34. Danish (Denmark)\n"+
+				"35. Dutch (Belgium)\n"+
+				"36. Dutch (Netherlands)\n"+
+				"37. English (Australia)\n"+
+				"38. English (Canada)\n"+
+				"39. English (Ghana)\n"+
+				"40. English (Hong Kong)\n"+
+				"41. English (India)\n"+
+				"42. English (Ireland)\n"+
+				"43. English (Kenya)\n"+
+				"44. English (New Zealand)\n"+
+				"45. English (Nigeria)\n"+
+				"46. English (Pakistan)\n"+
+				"47. English (Philippines)\n"+
+				"48. English (Singapore)\n"+
+				"49. English (South Africa)\n"+
+				"50. English (Tanzania)\n"+
+				"51. English (United Kingdom)\n"+
+				"52. English (United States)\n"+
+				"53. Estonian (Estonia)\n"+
+				"54. Filipino (Philippines)\n"+
+				"55. Finnish (Finland)\n"+
+				"56. French (Belgium)\n"+
+				"57. French (Canada)\n"+
+				"58. French (France)\n"+
+				"59. French (Switzerland)\n"+
+				"60. Galician (Spain)\n"+
+				"61. Georgian (Georgia)\n"+
+				"62. German (Austria)\n"+
+				"63. German (Germany)\n"+
+				"64. German (Switzerland)\n"+
+				"65. Greek (Greece)\n"+
+				"66. Gujarati (India)\n"+
+				"67. Hebrew (Israel)\n"+
+				"68. Hindi (India)\n"+
+				"69. Hungarian (Hungary)\n"+
+				"70. Icelandic (Iceland)\n"+
+				"71. Indonesian (Indonesia)\n"+
+				"72. Italian (Italy)\n"+
+				"73. Italian (Switzerland)\n"+
+				"74. Japanese (Japan)\n"+
+				"75. Javanese (Indonesia)\n"+
+				"76. Kannada (India)\n"+
+				"77. Kazakh (Kazakhstan)\n"+
+				"78. Khmer (Cambodia)\n"+
+				"79. Korean (South Korea)\n"+
+				"80. Lao (Laos)\n"+
+				"81. Latvian (Latvia)\n"+
+				"82. Lithuanian (Lithuania)\n"+
+				"83. Macedonian (North Macedonia)\n"+
+				"84. Malay (Malaysia)\n"+
+				"85. Malayalam (India)\n"+
+				"86. Marathi (India)\n"+
+				"87. Mongolian (Mongolia)\n"+
+				"88. Nepali (Nepal)\n"+
+				"89. Norwegian Bokmål (Norway)\n"+
+				"90. Persian (Iran)\n"+
+				"91. Polish (Poland)\n"+
+				"92. Portuguese (Brazil)\n"+
+				"93. Portuguese (Portugal)\n"+
+				"94. Punjabi (Gurmukhi India)\n"+
+				"95. Romanian (Romania)\n"+
+				"96. Russian (Russia)\n"+
+				"97. Serbian (Serbia)\n"+
+				"98. Sinhala (Sri Lanka)\n"+
+				"99. Slovak (Slovakia)\n"+
+				"100. Slovenian (Slovenia)\n"+
+				"101. Spanish (Argentina)\n"+
+				"102. Spanish (Bolivia)\n"+
+				"103. Spanish (Chile)\n"+
+				"104. Spanish (Colombia)\n"+
+				"105. Spanish (Costa Rica)\n"+
+				"106. Spanish (Dominican Republic)\n"+
+				"107. Spanish (Ecuador)\n"+
+				"108. Spanish (El Salvador)\n"+
+				"109. Spanish (Guatemala)\n"+
+				"110. Spanish (Honduras)\n"+
+				"111. Spanish (Mexico)\n"+
+				"112. Spanish (Nicaragua)\n"+
+				"113. Spanish (Panama)\n"+
+				"114. Spanish (Paraguay)\n"+
+				"115. Spanish (Peru)\n"+
+				"116. Spanish (Puerto Rico)\n"+
+				"117. Spanish (Spain)\n"+
+				"118. Spanish (United States)\n"+
+				"119. Spanish (Uruguay)\n"+
+				"120. Spanish (Venezuela)\n"+
+				"121. Sundanese (Indonesia)\n"+
+				"122. Swahili (Kenya)\n"+
+				"123. Swahili (Tanzania)\n"+
+				"124. Swedish (Sweden)\n"+
+				"125. Tamil (India)\n"+
+				"126. Tamil (Malaysia)\n"+
+				"127. Tamil (Singapore)\n"+
+				"128. Tamil (Sri Lanka)\n"+
+				"129. Telugu (India)\n"+
+				"130. Thai (Thailand)\n"+
+				"131. Turkish (Turkey)\n"+
+				"132. Ukrainian (Ukraine)\n"+
+				"133. Urdu (India)\n"+
+				"134. Urdu (Pakistan)\n"+
+				"135. Uzbek (Uzbekistan)\n"+
+				"136. Vietnamese (Vietnam)\n"+
+				"137. Zulu (South Africa)\n\n")
 
 	
 	
